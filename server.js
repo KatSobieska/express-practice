@@ -5,13 +5,13 @@ const app = express();
 
 app.use((req, res, next) => {
   res.show = (name) => {
-    res.sendFile(path.join(__dirname, `/vievs/${name}`));
+    res.sendFile(path.join(__dirname, `/views/${name}`));
   };
   next();
 });
 
 app.get("/", (req, res) => {
-  res.show("index.js");
+  res.show("index.html");
 });
 
 app.get("/about", (req, res) => {
